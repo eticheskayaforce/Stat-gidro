@@ -1,8 +1,17 @@
 # вычисление статистических характеристик
-from VigruzkaTXT2 import (Q)
-print(Q)
+from VigruzkaTXT2 import read_data
 from statistics import mean #из модуля статистика импортируем функцию среднего
+from statistics import variance #дисперсия
+from statistics import stdev #ср.квадратическое отклонение
+
+Q = read_data()
 Qsr = mean(Q) #задаем параметр среднего
-for line in Q #читаем значения Q  по строкам
-    line = line.strip(" \n")  # отбрасываем начальные и конечные пробелы
+DQ = variance(Q)
+STQ = stdev(Q)
+
+
+print(Qsr)
+print(DQ)
+print(STQ)
+
 
